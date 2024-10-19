@@ -1,7 +1,7 @@
 class CreateCiu8Displays < ActiveRecord::Migration[7.2]
   def change
     create_table :ciu8_displays do |t|
-      t.string :transformer_substaion, null: false
+      t.string :transformer_substation, null: false
       t.text :adress_street, null: false
       t.string :adress_number
       t.text :meter_model, null: false

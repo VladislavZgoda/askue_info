@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_16_183356) do
   create_table "ciu8_displays", force: :cascade do |t|
-    t.string "transformer_substaion", null: false
+    t.string "transformer_substation", null: false
     t.text "adress_street", null: false
     t.string "adress_number"
     t.text "meter_model", null: false
