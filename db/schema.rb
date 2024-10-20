@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_16_183356) do
   create_table "ciu8_displays", force: :cascade do |t|
-    t.string "transformer_substation", null: false
-    t.text "adress_street", null: false
+    t.string "transformer_substation"
+    t.text "adress_street"
     t.string "adress_number"
-    t.text "meter_model", null: false
-    t.string "meter_serial_number", limit: 8, null: false
-    t.string "display_serial_number", limit: 8, null: false
+    t.string "meter_model"
+    t.string "meter_serial_number"
+    t.string "display_serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
