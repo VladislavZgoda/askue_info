@@ -1,1 +1,30 @@
-<h1>Test</h1>
+<main class="m-2">
+  <h1>Дисплеи CIU8</h1>
+
+  <ul>
+    <% @ciu8_displays.each do |display| %>
+      <li>
+        <div class="flex gap-2">
+          <p>
+            <%= display.transformer_substation %>
+          </p>
+          <p>
+            <%= display.adress_street %>
+          </p>
+          <p>
+            <%= display.adress_number %>
+          </p>
+          <p>
+            <%= display.meter_model %>
+          </p>
+          <p>
+            <%= display.meter_serial_number %>
+          </p>
+          <p>
+            <%= display.display_serial_number %>
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</main>
