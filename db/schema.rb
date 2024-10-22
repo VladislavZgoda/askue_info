@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_183356) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_22_135742) do
   create_table "ciu8_displays", force: :cascade do |t|
     t.string "transformer_substation"
     t.text "adress_street"
@@ -20,5 +20,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_183356) do
     t.string "display_serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["display_serial_number"], name: "index_ciu8_displays_on_display_serial_number", unique: true
+    t.index ["meter_serial_number"], name: "index_ciu8_displays_on_meter_serial_number", unique: true
   end
 end
