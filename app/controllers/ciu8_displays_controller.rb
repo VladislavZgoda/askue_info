@@ -17,6 +17,20 @@ class Ciu8DisplaysController < ApplicationController
     end
   end
 
+  def edit
+    @ciu8_display = Ciu8Display.find(params[:id])
+  end
+
+  def update
+    @ciu8_display = Ciu8Display.find(params[:id])
+
+    if @ciu8_display.update(ciu8_display_params)
+      redirect_to "/"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def ciu8_display_params

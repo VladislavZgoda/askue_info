@@ -1,0 +1,50 @@
+<%= form_with model: ciu8_display do |form| %>
+  <div>
+    <%= form.label :transformer_substation %>
+    <%= form.text_field :transformer_substation %>
+    <% ciu8_display.errors[:transformer_substation].each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :adress_street %>
+    <%= form.text_field :adress_street %>
+    <% ciu8_display.errors[:adress_street].each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :adress_number %>
+    <%= form.text_field :adress_number %>
+  </div>
+
+  <div>
+    <%= form.label :meter_model %>
+    <%= form.text_field :meter_model %>
+    <% ciu8_display.errors[:meter_model].each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :meter_serial_number %>
+    <%= form.text_field :meter_serial_number %>
+    <% ciu8_display.errors[:meter_serial_number].each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :display_serial_number %>
+    <%= form.text_field :display_serial_number %>
+    <% ciu8_display.errors[:display_serial_number].each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

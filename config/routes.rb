@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root "ciu8_displays#index"
 
-  resources :ciu8_displays, only: [ :index, :new, :create ]
+  resources :ciu8_displays, except: [ :show ]
 
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
