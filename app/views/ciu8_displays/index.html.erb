@@ -25,6 +25,11 @@
           </p>
 
           <%= link_to "Редактировать", edit_ciu8_display_path(display) %>
+
+          <%= link_to "Удалить", ciu8_display_path(display), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Вы уверены?"
+          } %>
         </div>
       </li>
     <% end %>
