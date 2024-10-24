@@ -4,3 +4,6 @@ ru:
       ciu8_display:
         create: "Добавить дисплей"
         update: "Обновить данные"
+  errors:
+    messages:
+      blank: "Пустое поле."
