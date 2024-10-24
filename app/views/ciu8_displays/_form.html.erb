@@ -1,6 +1,6 @@
 <%= form_with model: ciu8_display do |form| %>
   <div>
-    <%= form.label :transformer_substation %>
+    <%= form.label :transformer_substation, "ТП" %>
     <%= form.text_field :transformer_substation %>
     <% ciu8_display.errors[:transformer_substation].each do |message| %>
       <div><%= message %></div>
@@ -8,7 +8,7 @@
   </div>
 
   <div>
-    <%= form.label :adress_street %>
+    <%= form.label :adress_street, "Улица" %>
     <%= form.text_field :adress_street %>
     <% ciu8_display.errors[:adress_street].each do |message| %>
       <div><%= message %></div>
@@ -16,12 +16,12 @@
   </div>
 
   <div>
-    <%= form.label :adress_number %>
+    <%= form.label :adress_number, "Номер дома" %>
     <%= form.text_field :adress_number %>
   </div>
 
   <div>
-    <%= form.label :meter_model %>
+    <%= form.label :meter_model, "Модель ПУ" %>
     <%= form.text_field :meter_model %>
     <% ciu8_display.errors[:meter_model].each do |message| %>
       <div><%= message %></div>
@@ -29,7 +29,7 @@
   </div>
 
   <div>
-    <%= form.label :meter_serial_number %>
+    <%= form.label :meter_serial_number, "S/N ПУ" %>
     <%= form.text_field :meter_serial_number %>
     <% ciu8_display.errors[:meter_serial_number].each do |message| %>
       <div><%= message %></div>
@@ -37,7 +37,7 @@
   </div>
 
   <div>
-    <%= form.label :display_serial_number %>
+    <%= form.label :display_serial_number, "S/N CIU8" %>
     <%= form.text_field :display_serial_number %>
     <% ciu8_display.errors[:display_serial_number].each do |message| %>
       <div><%= message %></div>
