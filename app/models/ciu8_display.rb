@@ -13,4 +13,17 @@ class Ciu8Display < ApplicationRecord
   validates :meter_serial_number, :display_serial_number, uniqueness: {
     message: "Серийный номер уже существует."
   }
+
+  before_validation :add_zero_to_the_begging_of_serial_number
+
+  private
+
+  def add_zero_to_the_begging_of_serial_number
+    self.meter_serial_number = "0" + meter_serial_number if valid_for_add_zero?(meter_serial_number)
+    self.display_serial_number = "0" + display_serial_number if valid_for_add_zero?(display_serial_number)
+  end
+
+  def valid_for_add_zero?(number)
+    true if number.length == 7 && !number.start_with?("0")
+  end
 end
