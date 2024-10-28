@@ -41,13 +41,16 @@ class Ciu8DisplaysController < ApplicationController
   private
 
   def ciu8_display_params
-    params.require(:ciu8_display).permit(
-      :transformer_substation,
-      :adress_street,
-      :adress_number,
-      :meter_model,
-      :meter_serial_number,
-      :display_serial_number
-    )
+    params
+      .require(:ciu8_display)
+      .permit(
+        :transformer_substation,
+        :adress_street,
+        :adress_number,
+        :meter_model,
+        :meter_serial_number,
+        :display_serial_number
+      )
+      .each_value { |value| value.try(:squish!) }
   end
 end
