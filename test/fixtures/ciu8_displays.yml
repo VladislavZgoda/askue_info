@@ -4,8 +4,29 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 1
+  transformer_substation: ТП-111
+  adress_street: ул. Степанова
+  adress_number: 272
+  meter_model: AD11S.1-FL-Z-R-TX(1-1-2)
+  meter_serial_number: 02345678
+  display_serial_number: 05643211
+
+two:
+  id: 2
+  transformer_substation: ТП-3
+  adress_street: ул. Дружбы
+  adress_number: 318
+  meter_model: AD13S.1-FL-Z-R-TX(1-1-2)
+  meter_serial_number: 05563379
+  display_serial_number: 05840130
+
+three:
+  id: 3
+  transformer_substation: ТП-143
+  adress_street: ул. Одесская
+  adress_number: 59
+  meter_model: AD13S.1-FL-Z-R-TX(1-1-2)
+  meter_serial_number: 05585640
+  display_serial_number: 05663295
