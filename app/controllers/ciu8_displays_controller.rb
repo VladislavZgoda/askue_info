@@ -1,4 +1,6 @@
 class Ciu8DisplaysController < ApplicationController
+  before_action :set_ciu8_display, only: [ :edit, :update, :destroy ]
+
   def index
     @ciu8_displays = Ciu8Display.all
   end
@@ -18,12 +20,9 @@ class Ciu8DisplaysController < ApplicationController
   end
 
   def edit
-    @ciu8_display = Ciu8Display.find(params[:id])
   end
 
   def update
-    @ciu8_display = Ciu8Display.find(params[:id])
-
     if @ciu8_display.update(ciu8_display_params)
       redirect_to root_path
     else
@@ -32,13 +31,16 @@ class Ciu8DisplaysController < ApplicationController
   end
 
   def destroy
-    @ciu8_display = Ciu8Display.find(params[:id])
     @ciu8_display.destroy
 
     redirect_to root_path, status: :see_other
   end
 
   private
+
+  def set_ciu8_display
+    @ciu8_display = Ciu8Display.find(params[:id])
+  end
 
   def ciu8_display_params
     params
