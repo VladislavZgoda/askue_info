@@ -1,39 +1,7 @@
-<main class="m-2">
-  <h1>Дисплеи CIU8</h1>
-
-  <ul>
-    <% @ciu8_displays.each do |display| %>
-      <li>
-        <div class="flex gap-2">
-          <p>
-            <%= display.transformer_substation %>
-          </p>
-          <p>
-            <%= display.adress_street %>
-          </p>
-          <p>
-            <%= display.adress_number %>
-          </p>
-          <p>
-            <%= display.meter_model %>
-          </p>
-          <p>
-            <%= display.meter_serial_number %>
-          </p>
-          <p>
-            <%= display.display_serial_number %>
-          </p>
-
-          <%= link_to "Редактировать", edit_ciu8_display_path(display) %>
-
-          <%= link_to "Удалить", ciu8_display_path(display), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Вы уверены?"
-          } %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+<main class="m-4">
+  <h1 class="mb-1">Дисплеи CIU8</h1>
 
   <%= link_to "Добавить дисплей", new_ciu8_display_path %>
+
+  <%= render @ciu8_displays %>
 </main>
