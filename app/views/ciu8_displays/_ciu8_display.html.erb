@@ -1,28 +1,29 @@
-<div class="flex gap-2 my-1">
-  <p>
-    <%= ciu8_display.transformer_substation %>
-  </p>
-  <p>
-    <%= ciu8_display.adress_street %>
-  </p>
-  <p>
-    <%= ciu8_display.adress_number %>
-  </p>
-  <p>
-    <%= ciu8_display.meter_model %>
-  </p>
-  <p>
-    <%= ciu8_display.meter_serial_number %>
-  </p>
-  <p>
-    <%= ciu8_display.display_serial_number %>
-  </p>
+<%= turbo_frame_tag ciu8_display do %>
+  <div class="flex gap-2 my-1">
+    <p>
+      <%= ciu8_display.transformer_substation %>
+    </p>
+    <p>
+      <%= ciu8_display.adress_street %>
+    </p>
+    <p>
+      <%= ciu8_display.adress_number %>
+    </p>
+    <p>
+      <%= ciu8_display.meter_model %>
+    </p>
+    <p>
+      <%= ciu8_display.meter_serial_number %>
+    </p>
+    <p>
+      <%= ciu8_display.display_serial_number %>
+    </p>
 
-  <%= link_to "Редактировать", edit_ciu8_display_path(ciu8_display) %>
+    <%= link_to "Редактировать", edit_ciu8_display_path(ciu8_display) %>
 
-  <%= link_to "Удалить", ciu8_display_path(ciu8_display), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Вы уверены?"
-  } %>
-</div>
-
+    <%= link_to "Удалить", ciu8_display_path(ciu8_display), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Вы уверены?"
+    } %>
+  </div>
+<% end %>
