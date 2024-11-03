@@ -1,7 +1,13 @@
 <main class="m-4">
   <h1 class="mb-1">Дисплеи CIU8</h1>
 
-  <%= link_to "Добавить дисплей", new_ciu8_display_path %>
+  <%= link_to "Добавить дисплей",
+              new_ciu8_display_path,
+              data: { turbo_frame: dom_id(Ciu8Display.new) } %>
 
-  <%= render @ciu8_displays %>
+  <%= turbo_frame_tag Ciu8Display.new %>
+
+  <%= turbo_frame_tag "ciu8_displays" do %>
+    <%= render @ciu8_displays %>
+  <% end %>
 </main>

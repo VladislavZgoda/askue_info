@@ -12,11 +12,7 @@ class Ciu8DisplaysController < ApplicationController
   def create
     @ciu8_display = Ciu8Display.new(ciu8_display_params)
 
-    if @ciu8_display.save
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
+    render :new, status: :unprocessable_entity unless @ciu8_display.save
   end
 
   def edit
