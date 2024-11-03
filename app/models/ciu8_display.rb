@@ -14,6 +14,8 @@ class Ciu8Display < ApplicationRecord
     message: "Серийный номер уже существует."
   }
 
+  scope :ordered, -> { order(id: :desc) }
+
   before_validation :add_zero_to_the_begging_of_serial_number
 
   private

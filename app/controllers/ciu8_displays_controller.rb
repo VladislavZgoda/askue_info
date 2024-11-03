@@ -2,7 +2,7 @@ class Ciu8DisplaysController < ApplicationController
   before_action :set_ciu8_display, only: [ :edit, :update, :destroy ]
 
   def index
-    @ciu8_displays = Ciu8Display.all
+    @ciu8_displays = Ciu8Display.ordered
   end
 
   def new
