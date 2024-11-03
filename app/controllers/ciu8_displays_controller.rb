@@ -32,8 +32,6 @@ class Ciu8DisplaysController < ApplicationController
 
   def destroy
     @ciu8_display.destroy
-
-    redirect_to root_path, status: :see_other
   end
 
   private
