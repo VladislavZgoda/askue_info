@@ -18,9 +18,7 @@ class Ciu8Display < ApplicationRecord
 
   before_validation :add_zero_to_the_begging_of_serial_number
 
-  after_create_commit -> { broadcast_prepend_to "ciu8_displays" }
-  after_update_commit -> { broadcast_replace_to "ciu8_displays" }
-  after_destroy_commit -> { broadcast_remove_to "ciu8_displays" }
+  broadcasts_to ->(ciu8_display) { "ciu8_displays" }, insert_by: :prepend
 
   private
 
