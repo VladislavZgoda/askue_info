@@ -20,6 +20,7 @@ class Ciu8Display < ApplicationRecord
 
   after_create_commit -> { broadcast_prepend_to "ciu8_displays" }
   after_update_commit -> { broadcast_replace_to "ciu8_displays" }
+  after_destroy_commit -> { broadcast_remove_to "ciu8_displays" }
 
   private
 
