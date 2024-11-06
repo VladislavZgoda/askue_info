@@ -12,7 +12,11 @@ class Ciu8DisplaysController < ApplicationController
   def create
     @ciu8_display = Ciu8Display.new(ciu8_display_params)
 
-    render :new, status: :unprocessable_entity unless @ciu8_display.save
+    if @ciu8_display.save
+      flash.now[:notice] = "Дисплей был успешно добавлен."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
