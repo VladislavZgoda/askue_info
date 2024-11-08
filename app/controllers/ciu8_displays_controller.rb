@@ -32,6 +32,8 @@ class Ciu8DisplaysController < ApplicationController
 
   def destroy
     @ciu8_display.destroy
+
+    flash.now[:notice] = "Дисплей был успешно удалён."
   end
 
   private
