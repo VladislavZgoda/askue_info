@@ -24,7 +24,7 @@ class Ciu8DisplaysController < ApplicationController
 
   def update
     if @ciu8_display.update(ciu8_display_params)
-      redirect_to root_path
+      flash.now[:notice] = "Данные были успешно обновленны."
     else
       render :edit, status: :unprocessable_entity
     end
