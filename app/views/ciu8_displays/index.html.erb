@@ -1,15 +1,18 @@
 <%= turbo_stream_from "ciu8_displays" %>
 
 <main class="m-4">
-  <h1 class="mb-1">Дисплеи CIU8</h1>
+  <div>
+    <h1 class="mb-1">Дисплеи CIU8</h1>
 
-  <%= link_to "Добавить новый дисплей",
-              new_ciu8_display_path,
-              data: { turbo_frame: dom_id(Ciu8Display.new) } %>
+    <%= link_to "Добавить новый дисплей",
+                new_ciu8_display_path,
+                data: { turbo_frame: dom_id(Ciu8Display.new) } %>
+  </div>
 
   <%= turbo_frame_tag Ciu8Display.new %>
 
   <%= turbo_frame_tag "ciu8_displays" do %>
+    <%= render "ciu8_displays/empty_state" %>
     <%= render @ciu8_displays %>
   <% end %>
 </main>
